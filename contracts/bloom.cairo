@@ -46,6 +46,11 @@ func _add{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
     # digest = H( item , seed ) % SIZE
     let (_, digest) = uint256_unsigned_div_rem(h1_uint256, size_uint256)
 
+    # TODO: replace with actual packing, using a full felt for a single bit feels gross
+    # Examples for later:
+    # * https://gist.github.com/Pet3ris/5d0f3c094a9ec99aff54025a790aa0a7
+    # * https://github.com/perama-v/GoL2/blob/main/contracts/utils/packing.cairo#L40
+    # * https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/common/bitwise.cairo
     bit_array.write(index=digest, value=TRUE)
     _add(item, hash_count - 1)
     return ()
