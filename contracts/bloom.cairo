@@ -51,6 +51,8 @@ func _add{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}(
     # * https://gist.github.com/Pet3ris/5d0f3c094a9ec99aff54025a790aa0a7
     # * https://github.com/perama-v/GoL2/blob/main/contracts/utils/packing.cairo#L40
     # * https://github.com/starkware-libs/cairo-lang/blob/master/src/starkware/cairo/common/bitwise.cairo
+    # * https://github.com/Orland0x/StarknetFractals/blob/main/contracts/lib/PackFelt.cairo#L311
+    # * https://github.com/playoasis/cairo-lib/blob/main/src/cairolib/bitwise.cairo
     bit_array.write(index=digest, value=TRUE)
     _add(item, hash_count - 1)
     return ()
