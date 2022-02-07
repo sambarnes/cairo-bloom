@@ -6,7 +6,9 @@ A naive [bloom filter](https://en.wikipedia.org/wiki/Bloom_filter) implementatio
 
 Motivation from [this blogpost](https://hackmd.io/@RoboTeddy/BJZFu56wF#Maxim-Computation-is-cheap-Writes-are-expensive) that states a maxim for StarkNet: `Computation is cheap. Writes are expensive.` That said, a bloom filter seems like it will be a fairly common tool to reach for when wanting to check membership of a set, without having to store that full set on chain.
 
-**Better implementations likely exist :) I used a full felt of storage for every bit in the bitarray. Probably should try to actually use the rest of the bits in each felt.**
+**Better implementations likely exist :)**
+
+~~I used a full felt of storage for every bit in the bitarray. Probably should try to actually use the rest of the bits in each felt.~~ Optimized a little bit, now stores 64 bits per felt of storage. 
 
 ## Development
 
